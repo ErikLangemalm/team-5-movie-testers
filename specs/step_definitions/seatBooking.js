@@ -3,6 +3,7 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 Given('that I am on the first page', () => {
   // TODO: implement step
   cy.visit('/');
+  cy.viewport(1000, 1200);
 });
 
 When('I click on a timeslot', () => {
@@ -14,7 +15,7 @@ When('I click on a specifik timeslot', () => {
   // TODO: implement step
   cy.get('div.custom-radio-button').first().click({ force: true });
   cy.get('input.screening-input').invoke('css', 'display', 'block').should('be.visible');
-  cy.get('.confirm-button').first().invoke('show').click()
+  cy.get('.confirm-button').first().click()
 });
 
 When('I reserve a seat', () => {
