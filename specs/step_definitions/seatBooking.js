@@ -20,9 +20,10 @@ When('I click on a specifik timeslot', () => {
 
 When('I reserve a seat', () => {
   // TODO: implement step
+  cy.get();
 });
 
-When('I select {string}', (a) => {
+When('I select {string}', (vuxen) => {
   // TODO: implement step
 });
 
@@ -30,6 +31,6 @@ When('I select a seat', () => {
   // TODO: implement step
 });
 
-Then('That seat should be unavailable for other users(repeat and verify previous steps).', () => {
+Then('That seat should be reserved for me under the bookings tab.', () => {
   // TODO: implement step
 });
