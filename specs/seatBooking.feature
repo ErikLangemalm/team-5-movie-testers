@@ -8,4 +8,4 @@ Feature: Booking seats
     And I reserve a seat
     And I select "vuxen"
     And I select a seat
-    Then That seat should be unavailable for other users(repeat and verify previous steps).
+    Then That seat should be reserved for me under the bookings tab.
