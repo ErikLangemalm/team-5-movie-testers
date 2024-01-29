@@ -7,7 +7,7 @@ Given('that I am on the first page', () => {
 
 When('I click on a timeslot', () => {
   // TODO: implement step
-  cy.get()
+  cy.get('.screeningsBtn important').click()
 });
 
 When('I click on a specifik timeslot', () => {
