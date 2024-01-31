@@ -18,12 +18,14 @@ When('I click on a specifik timeslot', () => {
   cy.get('.confirm-button').first().click()
 });
 
-When('I reserve a seat', () => {
+When('I select vuxen', () => {
   // TODO: implement step
-  cy.get();
+  cy.get('div.counter-container > button').eq(1).click();
+  cy.get('div > .confirm-button').first().click({ force: true });
+
 });
 
-When('I select {string}', (vuxen) => {
+When('I reserve a seat', () => {
   // TODO: implement step
 });
 
