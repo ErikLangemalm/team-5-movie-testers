@@ -4,7 +4,7 @@ Given('That I am on the first page.', () => {
   // TODO: implement step
 });
 
-When('I press the logo in the top right', () => {
+When('I press the logo in the top right.', () => {
   // TODO: implement step
 });
 
@@ -25,31 +25,14 @@ Given('I have already created an account.', () => {
 });
 
 /* No duplicate steps, this one already above
-When('I press the logo in the top right', () => {});*/
+When('I press the logo in the top right.', () => {});*/
 
 /* No duplicate steps, this one already above
 When('I select bli medlem.', () => {});*/
 
-When('I input my email and password', () => {
+/* No duplicate steps, this one already above
+When('I input my email and password.', () => {});*/
+
+Then('I shouldnt be able to create a new account.', () => {
   // TODO: implement step
 });
-
-Then('I shouldn't be able to create a new account.', () => {
-  // TODO: implement step
-});
-
-/* No duplicate steps, this one already above
-Given('That I am on the first page.', () => {});*/
-
-/* No duplicate steps, this one already above
-When('I press the logo in the top right', () => {});*/
-
-/* No duplicate steps, this one already above
-When('I select bli medlem.', () => {});*/
-
-When('I input a random string as an email and password.', () => {
-  // TODO: implement step
-});
-
-/* No duplicate steps, this one already above
-Then('I shouldn't be able to create a new account.', () => {});*/
