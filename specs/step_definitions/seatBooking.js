@@ -8,7 +8,7 @@ Given('that I am on the first page', () => {
 
 When('I click on a timeslot', () => {
   // TODO: implement step
-  cy.get('div.screeningContainer button').first().click({force: true});
+  cy.get('div.screeningContainer button').first().click({ force: true });
 });
 
 When('I click on a specifik timeslot', () => {
@@ -29,7 +29,7 @@ When('I reserve a seat', () => {
   // TODO: implement step
 });
 
-When('I select a seat', () => {
+When('I put in my email', () => {
   // TODO: implement step
 });
 
