@@ -31,7 +31,11 @@ When('I reserve a seat', () => {
     cy.wrap($section).find('.theatre-row').then(($seats, seatsIndex) => {
       let row = sectionIndex + 1;
       let seat = seatsIndex + 1;
-      cy.log(`Clicking on seat: Row ${parseInt(row)}, Seat ${seat}`);
+      cy.log(`Data type of seatIndex: ${typeof seat}`);
+      console.log(typeof seat);
+      console.log(seat);
+      cy.log(`Clicking on seat: Row ${parseInt(row)}.`);
+      cy.log(`Seat ${parseInt(seat)}`);
       // Click on the first available seat within the first theater row only
       cy.wrap($seats.eq(0)).find('.default-seat.available-seat').first().click({ force: true });
     });
