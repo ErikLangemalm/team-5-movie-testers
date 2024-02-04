@@ -31,7 +31,7 @@ When('I reserve a seat', () => {
     cy.wrap($section).find('.theatre-row').then(($seats, seatsIndex) => {
       let row = sectionIndex + 1;
       let seat = seatsIndex + 1;
-      cy.log(`Clicking on seat: Row ${row}, Seat ${seat}`);
+      cy.log(`Clicking on seat: Row ${parseInt(row)}, Seat ${seat}`);
       // Click on the first available seat within the first theater row only
       cy.wrap($seats.eq(0)).find('.default-seat.available-seat').first().click({ force: true });
     });
@@ -41,6 +41,11 @@ When('I reserve a seat', () => {
 
 When('I put in my email', () => {
   // TODO: implement step
+  let email = "cifap38802@evvgo.com";
+  cy.get('.form-control').click();
+  cy.get('.form-control').type(email);
+  cy.get('#booking-btn').click();
+  cy.get('.modal-undo-btn.btn.cancel-btn.btn.btn-primary').click({ force: true });
 });
 
 Then('That seat should be reserved for me under the bookings tab.', () => {
