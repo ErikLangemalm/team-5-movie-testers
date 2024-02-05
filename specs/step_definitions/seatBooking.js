@@ -27,6 +27,8 @@ When('I select vuxen', () => {
 
 When('I reserve a seat', () => {
   // TODO: implement step
+  cy.get('div.counter-container > button').eq(1).click();
+  cy.get('div > .confirm-button').first().click({ force: true });
 });
 
 When('I put in my email', () => {
