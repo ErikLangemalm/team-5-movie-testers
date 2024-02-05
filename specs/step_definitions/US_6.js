@@ -1,41 +1,57 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
-Given('The user goes to the FilmVisarna website', () => {
+Given('the user is on the websites start page', () => {
   // TODO: implement step
 });
 
-Given('The user selects {string} and show time and then clicks continue', (a) => {
+Given('the user selects {string} and show time and then clicks {string}', (a, b) => {
   // TODO: implement step
 });
 
-Given('The user chooses a screening', () => {
+Given('the user chooses a screening', () => {
   // TODO: implement step
 });
 
-When('The user finds an already reserved seat', () => {
+When('the user should be able to see available seats', () => {
   // TODO: implement step
 });
 
-When('The user clicks on the reserved seat', () => {
+When('the user clicks on the first available seat', () => {
   // TODO: implement step
 });
 
-Then('The reserve button should be visible but not clickable', () => {
+Then('the user clicks on the button {string}', (a) => {
   // TODO: implement step
 });
 
-When('The user finds an unreserved seat', () => {
+Then('the user clicks on the button {string} again', (a) => {
   // TODO: implement step
 });
 
-When('The user clicks on the unreserved seat', () => {
+Then('the user should be able to see bokningshistory', () => {
   // TODO: implement step
 });
 
-Then('The reserve button should be clickable', () => {
+Then('the user clicks the button {string} and returns to the home page', (a) => {
   // TODO: implement step
 });
 
-Then('The user should be able to successfully reserve the seat', () => {
+Then('the user selects {string} and show time and then clicks {string}', (a, b) => {
+  // TODO: implement step
+});
+
+Then('the user chooses a screening', () => {
+  // TODO: implement step
+});
+
+Then('the user clicks on the reserved seat', () => {
+  // TODO: implement step
+});
+
+Then('the user clicks on the button', () => {
+  // TODO: implement step
+});
+
+Then('the user should receive an alert message "Välj säten innan du fortsätter', () => {
   // TODO: implement step
 });
