@@ -26,21 +26,18 @@ When('I select vuxen', () => {
 
 When('I reserve a seat', () => {
   // TODO: implement step
-  cy.get('.theater-container').each(($section, sectionIndex) => {
-    // Within each theater container, iterate over theater rows
-    cy.wrap($section).find('.theatre-row').then(($seats, seatsIndex) => {
-      let row = sectionIndex + 1;
-      let seat = seatsIndex + 1;
-      cy.log(`Data type of seatIndex: ${typeof seat}`);
-      console.log(typeof seat);
-      console.log(seat);
-      cy.log(`Clicking on seat: Row ${parseInt(row)}.`);
-      cy.log(`Seat ${parseInt(seat)}`);
-      // Click on the first available seat within the first theater row only
-      cy.wrap($seats.eq(0)).find('.default-seat.available-seat').first().click({ force: true });
-    });
-  });
-  cy.get('.flex-space-between > .confirm-button').first().click({ force: true });
+  cy.get('.theater-container > .theatre-row').each(($el, index, $list) => {
+    // $el is a wrapped jQuery element
+    if ($el.should('have.class', 'default-seat.available-seat')) {
+      // wrap this element so we can
+      // use cypress commands on it
+      let seat = index;
+      cy.log(seat);
+      cy.wrap($el).click()
+    } else {
+      // do something else
+    }
+  })
 });
 
 When('I put in my email', () => {
