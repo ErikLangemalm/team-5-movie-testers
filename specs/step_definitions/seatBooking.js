@@ -26,17 +26,10 @@ When('I select vuxen', () => {
 
 When('I reserve a seat', () => {
   // TODO: implement step
-  cy.get('.theater-container > .theatre-row').each(($el, index, $list) => {
+  cy.get('.theatre-row').each(($el, index, $list) => {
     // $el is a wrapped jQuery element
-    if ($el.should('have.class', 'default-seat.available-seat')) {
-      // wrap this element so we can
-      // use cypress commands on it
-      let seat = index;
-      cy.log(seat);
-      cy.wrap($el).click()
-    } else {
-      // do something else
-    }
+    index += 1;
+    cy.get('default-seat.available-seat').first().click({ force: true });
   })
 });
 
