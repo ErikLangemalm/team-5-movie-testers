@@ -26,11 +26,18 @@ When('I select vuxen', () => {
 
 When('I reserve a seat', () => {
   // TODO: implement step
-  cy.get('.theatre-row').each(($el, index, $list) => {
-    // $el is a wrapped jQuery element
-    index += 1;
-    cy.get('default-seat.available-seat').first().click({ force: true });
-  })
+  cy.get('.theater-container').each(($row, rowIndex) => {
+
+    rowIndex += 1;
+    cy.wrap($row).each(($seat, seatIndex) => {
+      seatIndex += 1;
+      cy.log(`Processing row ${rowIndex}`);
+      cy.log(`Processing seat ${seatIndex}`);
+      cy.wrap($seat).find('.default-seat.available-seat').first().click({ force: true });
+    });
+  });
+  cy.get('div.confirm-button').first().click({ force: true });
+  //cy.get('.default-seat.available-seat').first().click({ force: true });
 });
 
 When('I put in my email', () => {
