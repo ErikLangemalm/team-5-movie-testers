@@ -15,12 +15,12 @@ When('I click on a specifik timeslot', () => {
   // TODO: implement step
   cy.get('div.custom-radio-button').first().click({ force: true });
   cy.get('input.screening-input').invoke('css', 'display', 'block').should('be.visible');
-  cy.get('.confirm-button').first().click()
+  cy.get('.confirm-button').first().click({ force: true })
 });
 
 When('I select vuxen', () => {
   // TODO: implement step
-  cy.get('div.counter-container > button').eq(1).click();
+  cy.get('div.counter-container > button').eq(1).click({ force: true });
   cy.get('div > .confirm-button').first().click({ force: true });
 });
 
