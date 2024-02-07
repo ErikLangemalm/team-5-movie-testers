@@ -6,6 +6,7 @@ const baseUrl = require('./baseUrl.js');
 
 module.exports = defineConfig(
   {
+    chromeWebSecurity: false,
     e2e:
     {
       specPattern: '**/*.feature',
