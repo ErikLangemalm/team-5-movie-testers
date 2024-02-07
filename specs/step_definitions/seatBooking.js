@@ -26,26 +26,30 @@ When('I select vuxen', () => {
 
 When('I reserve a seat', () => {
   // TODO: implement step
+  /*
+  let counter1;
+  let counter2;
   cy.get('.theater-container').each(($row, rowIndex) => {
 
-    rowIndex += 1;
+    counter1 += 1;
     cy.wrap($row).each(($seat, seatIndex) => {
-      seatIndex += 1;
+      counter2 += 1;
       cy.log(`Processing row ${rowIndex}`);
       cy.log(`Processing seat ${seatIndex}`);
       cy.wrap($seat).find('.default-seat.available-seat').first().click({ force: true });
     });
-  });
-  cy.get('div.confirm-button').first().click({ force: true });
-  //cy.get('.default-seat.available-seat').first().click({ force: true });
+  });*/
+
+  cy.get('.default-seat.available-seat').first().click({ force: true });
+  cy.get('.confirm-button').eq(1).click({ force: true });
 });
 
 When('I put in my email', () => {
   // TODO: implement step
   let email = "cifap38802@evvgo.com";
-  cy.get('.form-control').click();
+  cy.get('.form-control').click({ force: true });
   cy.get('.form-control').type(email);
-  cy.get('#booking-btn').click();
+  cy.get('#booking-btn').click({ force: true });
   cy.get('.modal-undo-btn.btn.cancel-btn.btn.btn-primary').click({ force: true });
 });
 
