@@ -1,5 +1,3 @@
-import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-
 Given('that I am on the first page', () => {
   // TODO: implement step
   cy.visit('/');
@@ -59,4 +57,26 @@ Then('A seat should be reserved for me in the booking confirmation.', () => {
   cy.get('.table-dark.table-border .tdata-left').each(($child) => {
     cy.wrap($child).invoke('text').should('eq', 'Plats');
   });*/
+});
+
+Given('that I am on the first page.', () => {
+  // TODO: implement step
+});
+
+/* No duplicate steps, this one already above
+When('I click on a timeslot', () => {});*/
+
+/* No duplicate steps, this one already above
+When('I click on a specifik timeslot', () => {});*/
+
+When('I select vuxen 100 times.', () => {
+  // TODO: implement step
+});
+
+When('I reserve a seat.', () => {
+  // TODO: implement step
+});
+
+Then('I shouldnt be able to continue with my booking.', () => {
+  // TODO: implement step
 });
