@@ -22,17 +22,31 @@ When('I select vuxen', () => {
   // TODO: implement step
   cy.get('div.counter-container > button').eq(1).click();
   cy.get('div > .confirm-button').first().click({ force: true });
-
 });
 
 When('I reserve a seat', () => {
   // TODO: implement step
-  cy.get('div.counter-container > button').eq(1).click();
-  cy.get('div > .confirm-button').first().click({ force: true });
+  cy.get('.theater-container').each(($row, rowIndex) => {
+
+    rowIndex += 1;
+    cy.wrap($row).each(($seat, seatIndex) => {
+      seatIndex += 1;
+      cy.log(`Processing row ${rowIndex}`);
+      cy.log(`Processing seat ${seatIndex}`);
+      cy.wrap($seat).find('.default-seat.available-seat').first().click({ force: true });
+    });
+  });
+  cy.get('div.confirm-button').first().click({ force: true });
+  //cy.get('.default-seat.available-seat').first().click({ force: true });
 });
 
 When('I put in my email', () => {
   // TODO: implement step
+  let email = "cifap38802@evvgo.com";
+  cy.get('.form-control').click();
+  cy.get('.form-control').type(email);
+  cy.get('#booking-btn').click();
+  cy.get('.modal-undo-btn.btn.cancel-btn.btn.btn-primary').click({ force: true });
 });
 
 Then('That seat should be reserved for me under the bookings tab.', () => {
