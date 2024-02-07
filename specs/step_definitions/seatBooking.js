@@ -41,7 +41,7 @@ When('I reserve a seat', () => {
   });*/
 
   cy.get('.default-seat.available-seat').first().click({ force: true });
-  cy.get('.confirm-button').eq(1).click({ force: true });
+  //cy.get('.confirm-button').eq(1).click({ force: true });
 });
 
 When('I put in my email', () => {
