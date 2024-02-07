@@ -32,5 +32,4 @@ cy.go(backButton)
 
 Then('I should be redirected back to the home page', () => {
   cy.url().should('eq', baseUrl)
-
 });
