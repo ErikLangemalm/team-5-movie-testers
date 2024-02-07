@@ -31,9 +31,14 @@ When('I click on a movie that has an age restriction of 15 years old', () => {
 });
 
 When('I click on a screening.', () => {
-  // TODO: implement step
+  // TODO: implement step'
+  cy.get('.movieCard.card.col-lg-3.col-md-4.col-sm-6.col-6').first().click({ force: true });
+  cy.get('div.custom-radio-button').first().click({ force: true });
+  cy.get('.confirm-button').first().click({ force: true });
+
 });
 
 Then('{string} shouldnt be an option.', (a) => {
   // TODO: implement step
+  cy.get('.ticket-category > label').eq(2).invoke('text').should('eq', 'Barn, (0-12 år)');
 });

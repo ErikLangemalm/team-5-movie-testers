@@ -15,7 +15,7 @@ When('I click on a specifik timeslot', () => {
   // TODO: implement step
   cy.get('div.custom-radio-button').first().click({ force: true });
   cy.get('input.screening-input').invoke('css', 'display', 'block').should('be.visible');
-  cy.get('.confirm-button').first().click({ force: true })
+  cy.get('.confirm-button').first().click({ force: true });
 });
 
 When('I select vuxen', () => {
