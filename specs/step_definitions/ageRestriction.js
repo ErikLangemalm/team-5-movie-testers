@@ -16,6 +16,7 @@ Given('I have logged in', () => {
   cy.get('.form-control.with-icon').eq(0).type(email);
   cy.get('.form-control.with-icon').eq(1).click({ force: true });
   cy.get('.form-control.with-icon').eq(1).type(password);
+  cy.get('.form-control.with-icon').eq(1).type(password);//copy of the above
 });
 
 When('I click on a movie that has an age restriction of 15 years old', () => {
