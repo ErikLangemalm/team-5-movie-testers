@@ -8,4 +8,4 @@ Feature: Booking seats
     And I select vuxen
     And I reserve a seat
     And I put in my email
-    Then That seat should be reserved for me under the bookings tab.
+    Then A seat should be reserved for me in the booking confirmation.

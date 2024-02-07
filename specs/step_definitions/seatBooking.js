@@ -52,7 +52,7 @@ When('I put in my email', () => {
   cy.get('.modal-undo-btn.btn.cancel-btn.btn.btn-primary').click({ force: true });
 });
 
-Then('That seat should be reserved for me under the bookings tab.', () => {
+Then('A seat should be reserved for me in the booking confirmation.', () => {
   // TODO: implement step
   cy.get('.table-dark.table-border .tdata-left').eq(3).invoke('text').should('eq', 'Plats:');
   /*
