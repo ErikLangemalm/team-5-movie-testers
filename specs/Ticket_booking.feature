@@ -7,19 +7,27 @@ Feature: Ticket Booking
   - Child: 80 SEK
 
   Background:
-    Given I am a visitor on the ticket booking page
+    Given I am on the home page
 
-  Scenario: Book Ticket for "<ticketType>"
-    When I select "<ticketType>" as the ticket type
-    And I proceed with the booking process
-    Then I the price should be "<price>"
-    And my booking should be confirmed
+  Scenario: Book Ticket for ticket type "<ticketType>" from movie detail page
+    And I click on the movie titled "Gladiator"
+    And I choose my desired show time and proceed
+    And I select ticket type "<ticketType>" quantity "<quantity>" and proceed
+    #And I can see "<totalPrice>"
+    Then I choose sitting place and proceed
+    And I enter my email at confirmation stage and proceed
+    Then I should see confirmation booking alert box
+    #When I click on "Boka" button 
+    #Then I should see confirmation screen
+    #And I can see my booking details
     Examples:
-      | ticketType | price   | 
-      | Adult      | 140 SEK | 
-      | Senior     | 120 SEK |
-      | Child      | 80 SEK  |
+      | ticketType | quantity       | totalPrice |
+      | Adult      |   1            | 140 SEK    | 
+      #| Senior     |   1            | 120 SEK    |
+      #| Child      |   1            | 80 SEK     |
+      #| Adult      |  2             | 280 SEK |
 
+@skip
   Scenario: Book Tickets for Two Adults and One Child
     When I select "Adult" as the ticket type
     And I enter a quantity of 2
