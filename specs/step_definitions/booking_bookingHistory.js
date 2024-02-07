@@ -1,8 +1,13 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 Given('the user is logged in', () => {
-  // TODO: implement step
+  cy.visit('/');
+
 });
+
+/* And('the user has booked {string} movie', (a) => {
+  
+}); */
 
 When('the user navigates to the {string} section', (a) => {
   // TODO: implement step
