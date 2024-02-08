@@ -4,7 +4,7 @@ Given('that the website is up and running', () => {
   // TODO: implement step
 });
 
-Given('it isn't crashing or displaying error syntax', () => {
+Given('it isn t crashing or displaying error syntax', () => {
   // TODO: implement step
 });
 
