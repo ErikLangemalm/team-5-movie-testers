@@ -10,7 +10,7 @@ Feature: Create new account
     Then I should get confirmation that a new account has been created.
 
   Scenario: create account that already exists.
-    Given That I am om the first page.
+    Given That I am on the first page.
     And I have already created an account.
     When I press the logo in the top right.
     And I select bli medlem.

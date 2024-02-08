@@ -15,7 +15,7 @@ Given('that I am on the first page', () => {
 
 When('I click on a timeslot', () => {
   // TODO: implement step
-  cy.get('div.screeningContainer button').first().click({ force: true });
+  cy.get('div.screeningContainer button').eq(1).click({ force: true });
 });
 
 When('I click on a specifik timeslot', () => {
@@ -87,8 +87,26 @@ When('I select vuxen 100 times.', () => {
 
 When('I reserve a seat.', () => {
   // TODO: implement step
+  for (let i = 0; i <= 100; i++) {
+    let row = 0;
+    let seat = 0;
+    cy.get('.theater-container').each(($row, rowIndex) => {
+
+      row += 1;
+      cy.wrap($row).each(($seat, seatIndex) => {
+        seat += 1;
+        cy.log(`Processing row ${rowIndex}`);
+        cy.log(`Processing seat ${seatIndex}`);
+        cy.wrap($seat).find('.default-seat.available-seat').first().click({ force: true });
+      });
+    });
+  }
 });
 
 Then('I shouldnt be able to continue with my booking.', () => {
   // TODO: implement step
+  cy.get('.accordion-body .confirm-button').eq(2).click({ force: true });
+  cy.on('window:alert', alertBoxContent => {
+    expect(alertBoxContent).to.equal(`Välj säten innan du fortsätter`);
+  });
 });
