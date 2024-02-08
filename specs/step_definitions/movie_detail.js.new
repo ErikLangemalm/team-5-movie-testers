@@ -12,22 +12,24 @@ Then('I should be directed to the movie details page', () => {
   // TODO: implement step
 });
 
-Given('I am on the movie details page for {string}', (a) => {
-  // TODO: implement step
-});
-
-When('I look at the page content', () => {
-  // TODO: implement step
-});
-
-Then('I should see the following information:', () => {
+When('I click on the movie titled {string}', (movieTitle) => {
   // TODO: implement step
 });
 
 /* No duplicate steps, this one already above
-Given('I am on the movie details page for {string}', (a) => {});*/
+Then('I should be directed to the movie details page', () => {});*/
 
-When('I click on the {string} button or a similar navigation element', (a) => {
+Then('I should see the following information {string} {string} {string}', (movieTitle, ageLimit, language) => {
+  // TODO: implement step
+});
+
+/* No duplicate steps, this one already above
+When('I click on the movie titled {string}', (a) => {});*/
+
+/* No duplicate steps, this one already above
+Then('I should be directed to the movie details page', () => {});*/
+
+When('I click on the {string} button', (a) => {
   // TODO: implement step
 });
 

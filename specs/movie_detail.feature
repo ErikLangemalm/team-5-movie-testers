@@ -7,21 +7,21 @@ Feature: Movie Details Page
     Given I am on the home page
 
   Scenario: Navigate to Movie Details Page
-    When I click on the movie titled "Example Movie"
+    When I click on the movie titled "Gladiator"
     Then I should be directed to the movie details page
 
   Scenario: View Movie Information
-    Given I am on the movie details page for "Example Movie"
-    When I look at the page content
-    Then I should see the following information:
-  - Movie image
-  - Trailer (embedded or link)
-  - Descriptive text about the movie
-  - Genre
-  - List of cast members
-  - Director's name
+    When I click on the movie titled "<movieTitle>"
+    Then I should be directed to the movie details page
+    And I should see the following information "<movieTitle>" "<ageLimit>" "<language>"
+    
+    Examples:
+      | movieTitle   | ageLimit | language |
+      | Gladiator    | 15 år    | Engelska |
+      | Interstellar | 11 år    | Engelska |
 
   Scenario: Navigate Back to Home Page
-    Given I am on the movie details page for "Example Movie"
-    When I click on the "Back" button or a similar navigation element
+    When I click on the movie titled "Gladiator"
+    Then I should be directed to the movie details page
+    When I click on the "back" button
     Then I should be redirected back to the home page
