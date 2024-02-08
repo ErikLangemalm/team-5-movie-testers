@@ -25,14 +25,15 @@ Then('the system displays the available {string} for the selected showtime', (a)
   
 });
 
-Then('the user clicks on one of the {string}', (a) => {
+Then('the user clicks on one of the first {string}', (a) => {
   // TODO: implement step
-  cy.get(':nth-child(2) > :nth-child(6)').should('be.visible');
+  cy.get('.default-seat.available-seat').should('be.visible')
+  
 });
 
 Then('the user verify that {string} are clickable', (a) => {
   // TODO: implement step
-  cy.get(':nth-child(2) > :nth-child(6)').click()
+  cy.get('.default-seat.available-seat:first').click()
 });
 
 Then('the user selects the {string} and {string} and clicks on the {string}', (a, b, c) => {
@@ -43,11 +44,10 @@ Then('the user selects the {string} and {string} and clicks on the {string}', (a
 Then('the user should get an alert message {string}', (alertText) => {
   // TODO: implement step
 
-  const nbt = cy.nbt()
-  cy.on('window:alert', nbt)
-  cy.get('.flex-space-between button').contains('Gå vidare').click()
-    .then(() => {
-      expect(nbt.getCall(0)).to.be.calledWith(alertText)
+  const stub = cy.stub()
+  cy.on('window:alert', stub)
+  cy.get('.flex-space-between button').contains('Gå vidare').click().then(() => {
+      expect(stub.getCall(0)).to.be.calledWith(alertText)
     })
 });
 
