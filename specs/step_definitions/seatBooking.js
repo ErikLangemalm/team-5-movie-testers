@@ -4,16 +4,7 @@ Given('that I am on the first page', () => {
   // TODO: implement step
   cy.visit('/');
   cy.viewport(1000, 1200);
-  let email = "cifap38802@evvgo.com";
-  let password = "Password123";
-  cy.get('#basic-nav-dropdown').click({ force: true });
-  cy.get('a[href="/logga-in"]').click({ force: true });
-  cy.get('.form-control.with-icon').eq(0).click({ force: true });
-  cy.get('.form-control.with-icon').eq(0).type(email);
-  cy.get('.form-control.with-icon').eq(1).click({ force: true });
-  cy.get('.form-control.with-icon').eq(1).type(password);
-  cy.get('#login-btn').click({ force: true });
-  cy.get('.d-flex.justify-content-center.mt-5 .startpage-btn.btn.btn-outline-secondary.py-2.mb-4').click({ force: true });
+
 
   const currentDate = new Date();
   currentDate.setDate(currentDate.getDate() + 10);
