@@ -1,4 +1,4 @@
-import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, Then, And } from "@badeball/cypress-cucumber-preprocessor";
 import baseUrl from "../../baseUrl";
 
 Given('I am on the home page', () => {
@@ -25,6 +25,14 @@ Then('I should see the following information {string} {string} {string}', (movie
   cy.get('div.movie-details-box').should('contain', language);
 
 });
+
+And('I should see trailer, info text and cast', () => {
+  cy.get('.movie-details-trailer').should('exist')
+  cy.get('.movie-details-desc').should('not.be.empty')
+  cy.get('.movie-details-actors').should('not.be.empty')
+
+  } )
+
 
 When('I click on the {string} button', (backButton) => {
 cy.go(backButton)
