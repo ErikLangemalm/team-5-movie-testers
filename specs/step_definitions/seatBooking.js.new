@@ -1,0 +1,29 @@
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+
+Given('that I am on the first page', () => {
+  // TODO: implement step
+});
+
+When('I click on a timeslot', () => {
+  // TODO: implement step
+});
+
+When('I click on a specifik timeslot', () => {
+  // TODO: implement step
+});
+
+When('I select vuxen', () => {
+  // TODO: implement step
+});
+
+When('I reserve a seat', () => {
+  // TODO: implement step
+});
+
+When('I put in my email', () => {
+  // TODO: implement step
+});
+
+Then('That seat should be reserved for me under the bookings tab.', () => {
+  // TODO: implement step
+});
