@@ -40,5 +40,6 @@ When('I click on a screening.', () => {
 
 Then('{string} shouldnt be an option.', (a) => {
   // TODO: implement step
-  cy.get('.ticket-category > label').eq(2).invoke('text').should('eq', 'Barn, (0-12 år)');
+  cy.log(cy.get('.ticket-category > label').eq(2).invoke('text'));
+  cy.get('.ticket-category > label').eq(4).invoke('text').should('not.eq', 'Barn, (0-12 år)');
 });

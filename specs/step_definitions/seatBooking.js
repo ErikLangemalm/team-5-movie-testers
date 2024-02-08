@@ -4,6 +4,22 @@ Given('that I am on the first page', () => {
   // TODO: implement step
   cy.visit('/');
   cy.viewport(1000, 1200);
+  let email = "cifap38802@evvgo.com";
+  let password = "Password123";
+  cy.get('#basic-nav-dropdown').click({ force: true });
+  cy.get('a[href="/logga-in"]').click({ force: true });
+  cy.get('.form-control.with-icon').eq(0).click({ force: true });
+  cy.get('.form-control.with-icon').eq(0).type(email);
+  cy.get('.form-control.with-icon').eq(1).click({ force: true });
+  cy.get('.form-control.with-icon').eq(1).type(password);
+  cy.get('#login-btn').click({ force: true });
+  cy.get('.d-flex.justify-content-center.mt-5 .startpage-btn.btn.btn-outline-secondary.py-2.mb-4').click({ force: true });
+
+  const currentDate = new Date();
+  currentDate.setDate(currentDate.getDate() + 10);
+  const dateString = currentDate.toISOString().split('T')[0];
+  cy.get('input.filterScreenings').invoke('val', dateString);
+
 });
 
 When('I click on a timeslot', () => {
@@ -61,9 +77,8 @@ Then('A seat should be reserved for me in the booking confirmation.', () => {
   });*/
 });
 
-Given('that I am on the first page.', () => {
-  // TODO: implement step
-});
+/* No duplicate steps, this one already above
+Given('that I am on the first page', () => {});*/
 
 /* No duplicate steps, this one already above
 When('I click on a timeslot', () => {});*/
@@ -73,6 +88,10 @@ When('I click on a specifik timeslot', () => {});*/
 
 When('I select vuxen 100 times.', () => {
   // TODO: implement step
+  for (let i = 0; i <= 100; i++) {
+    cy.get('div.counter-container > button').eq(1).click({ force: true });
+  }
+  cy.get('div > .confirm-button').first().click({ force: true });
 });
 
 When('I reserve a seat.', () => {

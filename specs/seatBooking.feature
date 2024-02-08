@@ -11,7 +11,7 @@ Feature: Booking seats
     Then A seat should be reserved for me in the booking confirmation.
 
   Scenario: When I book more seats than there are available in a row I shouldn't be able to book any seats.
-    Given that I am on the first page.
+    Given that I am on the first page
     When I click on a timeslot
     And I click on a specifik timeslot
     And I select vuxen 100 times.
