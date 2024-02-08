@@ -2,6 +2,8 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 Given('That I am on the first page.', () => {
   // TODO: implement step
+  cy.visit('/');
+  cy.viewport(1000, 1200);
 });
 
 When('I press the logo in the top right.', () => {
