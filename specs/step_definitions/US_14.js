@@ -34,13 +34,16 @@ Then('the user selects the {string} and {string} clicks on the button {string}',
   // TODO: implement step
   cy.get('.price-component').should('be.visible')
   cy.get(':nth-child(1) > .counter-container > :nth-child(3)').click({ force: true });
+  cy.wait(2000)
   cy.get('.price-component > .confirm-button').click({ force: true });
+
   
 
 });
 
 Then('the user can see that how many reserved seats live in the screen', () => {
   // TODO: implement step
+  cy.get('.default-seat.available-seat:first').click()
   cy.get('.theater-container').should('be.visible')
   cy.get('.theater-container').screenshot()
   

@@ -10,7 +10,7 @@ And   user selects "Sample Movie" and show time and then clicks continue
 Scenario: the user selects a "Sample Movie" and a movie showtime
 Then the user selects the "biljettyp" and "antal" and clicks on the button "Gå vidare"
 Then the system displays the available "Ledig plats" for the selected showtime
-And  the user clicks on one of the "Ledig plats"
+And  the user clicks on one of the first "Ledig plats"
 And  the user verify that "Ledig plats" are clickable
 
 Scenario: the user selects a "Sample Movie" and showtime, but all seats are occupied
