@@ -5,12 +5,14 @@ When('I click {string} button', (buttonName) => {
 });
 
 And('I click the confirm button', () => {
+  cy.wait(3000)
   cy.get('.price-component > .confirm-button').click({ force: true })
 });
 
 Then('I enter my email at confirmation stage and proceed', () => {
   cy.get("[type='email']").type('anam-rehman@live.com', { force: true })
   cy.get('#booking-btn').click({ force: true })
+  cy.wait(3000)
 
 });
 
@@ -19,16 +21,19 @@ Then('I should see confirmation booking alert box', () => {
     .should('be.visible')
     .contains('button', 'Boka')
     .click()
+  cy.wait(3000)
 });
 
 Then('I should see confirmation screen', () => {
   cy.url().should('include', '/bokningsbekraftelse');
+  cy.wait(3000)
 
 });
 
 When('I choose my desired show time and proceed', () => {
   cy.get(':nth-child(3) > .custom-radio-button').click({ force: true })
   cy.contains('button', 'Gå vidare').click({ force: true })
+  cy.wait(3000)
 });
 
 Then('I can see my booking details', () => {
@@ -37,7 +42,7 @@ Then('I can see my booking details', () => {
 
 Then('I can see total price {string}', (totalPrice) => {
   cy.get('.total-price').eq(0).should('contain.text', 'Total: ' + totalPrice)
-  // TODO: implement step
+  cy.wait(3000)
 });
 
 When('I select {string} as the ticket type with quantity of {string}', (ticketType, qty) => {
@@ -54,4 +59,5 @@ When('I select {string} as the ticket type with quantity of {string}', (ticketTy
   for (let i = 1; i <= parseInt(qty); i++) {
     cy.get(`${categorySelector} button:nth-of-type(2)`).click({ force: true });
   }
+  cy.wait(3000)
 });
