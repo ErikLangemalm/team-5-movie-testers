@@ -2,8 +2,9 @@
 Vi testar följande features:
 * Berätta om feature A
   * Eventuellt beskriv scenarier kortfattat.
-* Berätta om feature B
+* Inloggning samt bli medlem.
   * Eventuellt beskriv scenarier kortfattat.
+  * Scenarier relaterade till inloggningen omfattar skapa nytt konto, testa inmatningsfälten för nya medlemmar.
 * Berätta om feature C
   * Eventuellt beskriv scenarier kortfattat.
 
