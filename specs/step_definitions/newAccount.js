@@ -81,14 +81,16 @@ When('I select bli medlem.', () => {});*/
 
 When('I input a random string as an email and password.', () => {
   // TODO: implement step
+  let placeholder = "placeholder";
   let email = 'aoplishgjlksahgjowahngiowajgash';
   let password = "Password123";
+  cy.get('.form-control.with-icon').eq(0).click({ force: true });
+  cy.get('.form-control.with-icon').eq(0).type(placeholder);
   cy.get('.form-control.with-icon').eq(0).click({ force: true });
   cy.get('.form-control.with-icon').eq(0).type(email);
   cy.get('.form-control.with-icon').eq(1).click({ force: true });
   cy.get('.form-control.with-icon').eq(1).type(password);
   cy.get('#login-btn').click({ force: true });
-
 });
 
 /* No duplicate steps, this one already above
