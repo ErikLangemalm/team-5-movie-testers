@@ -1,10 +1,7 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 Given('that i succsesfully bought my tickets', () => {
-  // TODO: implement step
-});
-
-Given('I succsesfully buy my tickets', () => {
+  
   // TODO: implement step
 });
 

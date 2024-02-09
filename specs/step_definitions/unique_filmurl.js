@@ -1,23 +1,27 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
-/* No duplicate steps, this one already in prototype.js
-Given('that im scrolling for movies available', () => {});*/
-
-Given('That I am scrolling for movies', () => {
+Given('That I am in the home page', () => {
+  cy.visit('/');
+  cy.viewport(1000, 1200);
   // TODO: implement step
 });
 
 When('I Click on a movie', () => {
+  cy.get('.movieCard.card').first().click({ force: true });
   // TODO: implement step
-  cy.get('<div class="movieCard card col-lg-3 col-md-4 col-sm-6 col-6"><img class="movieImages"').first().click({ force: true });
 });
 
 Then('I should be directed from the movie selection to the more detailed movie view', () => {
   // TODO: implement step
-});
+  Then('I should be directed from the movie selection to the more detailed movie view', () => {
+    cy.url().should('include', '/detailed-movie-view');
+    cy.get('.movie-details').should('exist');
+    cy.get('.movie-title').should('exist');
+    cy.get('.movie-description').should('exist');
+  });
 
-/* No duplicate steps, this one already in prototype.js
-Then('I should then be able to see following information:', () => {});*/
+  
+});
 
 Given('That I am in the detailed movie view', () => {
   // TODO: implement step
@@ -25,8 +29,10 @@ Given('That I am in the detailed movie view', () => {
 
 When('I Check the URL it should contain the movie title in the URL', () => {
   // TODO: implement step
+  cy.url().should('include', '<movie-title>');
 });
 
-When('I should then be able to see following information:', () => {
+When('I should then be able to see following information:', (dataTable) => {
   // TODO: implement step
+  // You can use assertions to verify the presence of the information based on the data in 'dataTable'
 });
