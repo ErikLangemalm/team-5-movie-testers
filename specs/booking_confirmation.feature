@@ -10,16 +10,14 @@ Feature: Booking Confirmation
     Given I successfully buy my tickets
     Then I should be directed from the payment screen to the booking confirmation screen
     And I should then be able to see the following information:
-    Examples:
+   Examples:
     | Movie name |
     | Time and date |
-    | Movie image |
     | Seat location/number |
     | Quantity |
     | Payment method |
     | Total cost |
     | Booking number |
-    | Billing address/contact information |
 
 
   Scenario: Booking Confirmation Email
@@ -29,10 +27,8 @@ Feature: Booking Confirmation
     Examples:
     | Movie name |
     | Time and date |
-    | Movie image |
     | Seat location/number |
     | Quantity |
     | Payment method |
     | Total cost |
     | Booking number |
-    | Billing address/contact information |

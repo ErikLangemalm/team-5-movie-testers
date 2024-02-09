@@ -1,6 +1,7 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 Given('that im scrolling for movies available', () => {
+  
   // TODO: implement step
 });
 
