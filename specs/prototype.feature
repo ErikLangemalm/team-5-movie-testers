@@ -19,7 +19,7 @@ Feature: Prototype
       | Happy Gilmore         | 1/2-24 - 22/2-24       |
 
 
-  Scenario Outline: Displaying a prototype with 5 different movies across 30 viewing dates with more detailed information
+  Scenario Outline: Displaying a prototype with 5 different movies if there are seats and viewing dates available
     Given I am scrolling for movies as the system manager
     When I choose to view the prototype in the system
     Then I should see a display with 5 movies across 30 viewing dates including more detailed information
