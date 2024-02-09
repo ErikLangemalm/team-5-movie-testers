@@ -60,10 +60,8 @@ When('I input my email and password.', () => {});*/
 
 Then('I shouldnt be able to create a new account.', () => {
   // TODO: implement step
-  let emp = "";
   let email = "cifap38802@evvgo.com";
   let password = "Password123";
-  cy.get('.form-control.with-icon').eq(0).type(emp);
   cy.get('.form-control.with-icon').eq(0).click({ force: true });
   cy.get('.form-control.with-icon').eq(0).type(email);
   cy.get('.form-control.with-icon').eq(1).click({ force: true });
