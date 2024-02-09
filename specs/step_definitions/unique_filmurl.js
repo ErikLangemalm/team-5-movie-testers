@@ -34,5 +34,5 @@ When('I Check the URL it should contain the movie title in the URL', () => {
 
 When('I should then be able to see following information:', (dataTable) => {
   // TODO: implement step
-  // You can use assertions to verify the presence of the information based on the data in 'dataTable'
+
 });

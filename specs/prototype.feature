@@ -10,10 +10,7 @@ Feature: Prototype
     Given I am scrolling for movies as the system manager
     When I choose to view the prototype in the system
     Then I should see a display with 5 movies across 30 viewing dates
-    And I should then be able to see the following information:
-    * Movie name
-    * Movie Theater
-    * Viewing Dates
+    And I should then be able to see the following information, Movie name, Movie Theater, Viewing Dates
 
     Examples:
       | Film Title            | Movie Theater | Viewing Dates          |
@@ -28,12 +25,7 @@ Feature: Prototype
     Given I am scrolling for movies as the system manager
     When I choose to view the prototype in the system
     Then I should see a display with 5 movies across 30 viewing dates including more detailed information
-    And I should then be able to see the following information:
-    * Movie name
-    * Genre
-    * Duration
-    * Movie Theater
-    * Viewing Dates
+    And I should then be able to see the following information: Movie name, Genre, Duration, Movie Theater, Viewing Dates
 
     Examples:
       | Film Title            | Genre                          | Duration | Movie Theater | Viewing Dates          |
