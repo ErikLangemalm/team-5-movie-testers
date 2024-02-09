@@ -33,15 +33,9 @@ When('I select vuxen', () => {
 
 When('I reserve a seat', () => {
   // TODO: implement step
-  let row = 0;
-  let seat = 0;
   cy.get('.theater-container').each(($row, rowIndex) => {
 
-    row += 1;
     cy.wrap($row).each(($seat, seatIndex) => {
-      seat += 1;
-      cy.log(`Processing row ${rowIndex}`);
-      cy.log(`Processing seat ${seatIndex}`);
       cy.wrap($seat).find('.default-seat.available-seat').first().click({ force: true });
     });
   });
@@ -62,10 +56,7 @@ When('I put in my email', () => {
 Then('A seat should be reserved for me in the booking confirmation.', () => {
   // TODO: implement step
   cy.get('.table-dark.table-border .tdata-left').eq(3).invoke('text').should('eq', 'Plats:');
-  /*
-  cy.get('.table-dark.table-border .tdata-left').each(($child) => {
-    cy.wrap($child).invoke('text').should('eq', 'Plats');
-  });*/
+
 });
 
 /* No duplicate steps, this one already above
