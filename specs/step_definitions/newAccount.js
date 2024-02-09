@@ -34,7 +34,7 @@ When('I input my email and password', () => {
   // TODO: implement step
 });
 
-Then('I shouldn't be able to create a new account.', () => {
+Then('I shouldn\'t be able to create a new account.', () => {
   // TODO: implement step
 });
 
