@@ -23,10 +23,5 @@
     "@badeball/cypress-cucumber-preprocessor": "12.2",
     "@cypress/webpack-preprocessor": "5.12",
     "cypress": "10.7"
-  },
-  "dependencies": {
-    "crypto-browserify": "^3.12.0",
-    "os-browserify": "^0.3.0",
-    "util": "^0.12.5"
   }
 }
