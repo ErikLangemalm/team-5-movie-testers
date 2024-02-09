@@ -6,6 +6,7 @@ Given('that I am on the first page', () => {
 });
 
 Given('that the user is new and wants to be a member', () => {
+  cy.get('filterScreenings').should('exist')
   cy.get('div.basic-nav-dropdown').first().click({ force: true });
   // TODO: implement step
 });
