@@ -68,6 +68,7 @@ Then('I shouldnt be able to create a new account.', () => {
   cy.get('.form-control.with-icon').eq(1).type(password);
   cy.get('#login-btn').click({ force: true });
   cy.url().should('include', '/logga-in');
+
 });
 
 /* No duplicate steps, this one already above
