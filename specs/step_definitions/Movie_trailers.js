@@ -14,11 +14,11 @@ const getIframeBody = () => {
 }
 
 When('I click the play trailer button', () => {
-
-  cy.wait(1000);
+cy.wait(2000)
   //getIframeBody().find('.ytp-time-duration')
 
   getIframeBody().find('.ytp-large-play-button').click({ force: true });
+  cy.wait(5000)
 });
 
 Then('I should watch the trailer', () => {
@@ -33,9 +33,10 @@ When('I click on the movie titled {string}', (a) => {});*/
 Then('I should be directed to the movie details page', () => {});*/
 
 When('I click on watch on youtube button', () => {
-
-  // Currently I am working on this, youtube link inside ifram is not found
-  //getIframeBody().find('a.ytp-impression-link').click({ force: true });
+cy.wait(2000)
+  // Currently I am working on this, its not verifying that our video is played or not on youtube
+  getIframeBody().find('a.ytp-impression-link').click({ force: true });
+  cy.wait(2000)
 
 });
 
