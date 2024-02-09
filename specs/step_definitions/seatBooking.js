@@ -100,4 +100,5 @@ Then('I shouldnt be able to continue with my booking.', () => {
   cy.on('window:alert', alertBoxContent => {
     expect(alertBoxContent).to.equal(`Välj säten innan du fortsätter`);
   });
+
 });
