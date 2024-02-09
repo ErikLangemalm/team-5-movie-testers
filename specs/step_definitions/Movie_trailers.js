@@ -23,7 +23,7 @@ cy.wait(2000)
 
 Then('I should watch the trailer', () => {
   // TODO: implement step
-  
+
 });
 
 /* No duplicate steps, this one already in movie_detail.js

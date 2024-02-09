@@ -60,14 +60,18 @@ When('I input my email and password.', () => {});*/
 
 Then('I shouldnt be able to create a new account.', () => {
   // TODO: implement step
-  let email = "cifap38802@evvgo.com";
-  let password = "Password123";
+
+  let email1 = "cifap38802@evvgo.com";
+  let password1 = "Password123";
   cy.get('.form-control.with-icon').eq(0).click({ force: true });
-  cy.get('.form-control.with-icon').eq(0).type(email);
+  cy.get('.form-control.with-icon').eq(0).type(" ");
+  cy.get('.form-control.with-icon').eq(0).click({ force: true });
+  cy.get('.form-control.with-icon').eq(0).type(email1);
   cy.get('.form-control.with-icon').eq(1).click({ force: true });
-  cy.get('.form-control.with-icon').eq(1).type(password);
+  cy.get('.form-control.with-icon').eq(1).type(password1);
   cy.get('#login-btn').click({ force: true });
   cy.url().should('include', '/logga-in');
+
 });
 
 /* No duplicate steps, this one already above
