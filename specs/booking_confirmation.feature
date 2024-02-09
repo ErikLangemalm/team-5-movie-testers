@@ -20,10 +20,10 @@ Feature: Booking Confirmation
     | Booking number |
 
 
-  Scenario: Booking Confirmation Email
-    Given I am on my preferred email app
-    When I check my unread emails
-    And I should see an email from "noreply@filmvisarna.se" containing the following information:
+  Scenario: Booking Confirmation Login
+    Given I am on logged in on the page
+    When I check mina bokningar
+    And I should see all my bookings with the following information
     Examples:
     | Movie name |
     | Time and date |
