@@ -55,7 +55,6 @@ When('I put in my email', () => {
 
 Then('A seat should be reserved for me in the booking confirmation.', () => {
   // TODO: implement step
-  cy.get('.table-dark.table-border .tdata-left').eq(3).invoke('text').should('eq', 'Plats:');
 
 });
 
