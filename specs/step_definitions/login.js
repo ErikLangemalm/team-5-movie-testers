@@ -6,16 +6,11 @@ Given('that I am on the first page', () => {
   cy.viewport(1000, 1200);
 
 
-  const currentDate = new Date();
-  currentDate.setDate(currentDate.getDate() + 10);
-  const dateString = currentDate.toISOString().split('T')[0];
-  cy.get('input.filterScreenings').invoke('val', dateString);
-
 });
 
 When('I click on a timeslot', () => {
   // TODO: implement step
-  cy.get('div.screeningContainer button').eq(1).click({ force: true });
+  cy.get(':nth-child(1) > .svg.bi.bi-person-circle').click();
 });
 
 When('I click on a specifik timeslot', () => {
