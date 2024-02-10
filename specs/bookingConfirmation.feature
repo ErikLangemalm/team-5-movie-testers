@@ -3,9 +3,6 @@ Feature: Booking Confirmation
   I want to be able to receive a booking confirmation
   So that I can then know if my movie tickets are bought and booked
 
-  Background:
-    Given that I successfully bought my tickets
-
   Scenario: Booking Confirmation Screen
     Given I successfully buy my tickets
     Then I should be directed from the payment screen to the booking confirmation screen
