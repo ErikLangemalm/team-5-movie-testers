@@ -1,15 +1,10 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
-Given('that im scrolling for movies available', () => {
-  
+Given('I am scrolling for movies as the system manager', () => {
   // TODO: implement step
 });
 
-Given('That I am scrolling for movies as the system manager', () => {
-  // TODO: implement step
-});
-
-When('I choose to go into the system to see the prototype', () => {
+When('I choose to view the prototype in the system', () => {
   // TODO: implement step
 });
 
@@ -17,19 +12,20 @@ Then('I should see a display with 5 movies across 30 viewing dates', () => {
   // TODO: implement step
 });
 
-Then('I should then be able to see following information:', () => {
+Then('I should then be able to see the following information, Movie name and Viewing Dates', () => {
   // TODO: implement step
 });
 
 /* No duplicate steps, this one already above
-Given('That I am scrolling for movies as the system manager', () => {});*/
+Given('I am scrolling for movies as the system manager', () => {});*/
 
 /* No duplicate steps, this one already above
-When('I choose to go into the system to see the prototype', () => {});*/
+When('I choose to view the prototype in the system', () => {});*/
 
-Then('I should see a display with 5 movies across 30 viewing dates including a bit more information', () => {
+Then('I should see a display with 5 movies across 30 viewing dates including more detailed information', () => {
   // TODO: implement step
 });
 
-/* No duplicate steps, this one already above
-Then('I should then be able to see following information:', () => {});*/
+Then('I should then be able to see the following information: Movie name and Viewing Dates for available movies', () => {
+  // TODO: implement step
+});
