@@ -8,8 +8,6 @@ Feature: Prototype
     When I choose to view the prototype in the system
     Then I should see a display with 5 movies across 30 viewing dates
     And I should then be able to see the following information, Movie name and Viewing Dates
-
-    Examples:
        Examples:
       | Film Title            | Viewing Dates          |
       | Gladiator             | 1/2-24 - 22/2-24       |

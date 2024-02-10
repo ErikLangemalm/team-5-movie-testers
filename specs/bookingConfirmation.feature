@@ -11,6 +11,6 @@ Feature: Booking Confirmation
   Scenario: Booking Confirmation Login
     Then I log in into the page
     Then I check mina bokningar
-    Then I should see all my bookings with the following information:
+    Then I should see all my bookings with the necessary information:
 
  

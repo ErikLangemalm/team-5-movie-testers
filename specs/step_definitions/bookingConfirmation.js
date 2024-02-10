@@ -50,15 +50,17 @@ Then('I log in into the page', () => {
   cy.get('input[type="password"]').click({ force: true }).type(password);
   cy.get('button[id="login-btn"]').click();
   cy.wait(3000);
-
-
 });
 
 Then('I check mina bokningar', () => {
-  cy.url().should('include', '/bokningar');
-  cy.wait(3000);
+    cy.url().should('include', '/bokningar');
+    cy.wait(3000);
 });
 
-Then('I should see all my bookings with the following information', () => {
-
+Then('I should see my bookings with the necessary information', () => {
+    cy.get('.mb-4.table-dark').should('be.visible');
+    cy.get('.d-flex.justify-content-between.my-3').contains('div', 'Film').next('.booking-info').should('be.visible');
+    cy.get('.d-flex.justify-content-between.my-3').contains('div', 'Datum').next('.booking-info').should('be.visible');
+    cy.get('.d-flex.justify-content-between.my-3').contains('div', 'Plats').next('.booking-info').should('be.visible');
+    cy.get('.d-flex.justify-content-between.my-3').contains('div', 'Kostnad').next('.booking-info').should('be.visible');
 });
