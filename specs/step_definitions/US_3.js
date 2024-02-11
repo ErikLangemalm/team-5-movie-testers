@@ -41,6 +41,11 @@ Then('the user selects the {string} and {string} and clicks on the {string}', (a
   cy.get('.price-component > .confirm-button').click()
 });
 
+Then('the user clicks on the {string} button and all seats are occupied.', (a) => {
+  // TODO: implement step
+  cy.get('.flex-space-between > .confirm-button').click()
+});
+
 Then('the user should get an alert message {string}', (alertText) => {
   // TODO: implement step
 

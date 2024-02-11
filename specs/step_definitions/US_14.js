@@ -20,7 +20,7 @@ Then('the user clicks on the time button', () => {
 
 When('the user selects the date and time and the language of the movie', () => {
   // TODO: implement step
-  cy.get(':nth-child(2) > .custom-radio-button').click({ force: true });
+  cy.get(':nth-child(3) > .custom-radio-button').click({ force: true });
   
 });
 
@@ -41,12 +41,13 @@ Then('the user selects the {string} and {string} clicks on the button {string}',
 
 });
 
-Then('the user can see that how many reserved seats live in the screen', () => {
+Then('the user can directly see how many total available seats there are', () => {
   // TODO: implement step
-  cy.get('.default-seat.available-seat:first').click()
-  cy.get('.theater-container').should('be.visible')
-  cy.get('.theater-container').screenshot()
-  
+
+    cy.get('.default-seat.available-seat').then(($avaliableSeat) => {
+    const numberSeatsAvailable = $avaliableSeat.length
+    cy.log(`A total of ${numberSeatsAvailable} vacant seats were found`)
+  })
 });
 
 Then('the user click on the {string} button', (a) => {

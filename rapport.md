@@ -25,6 +25,12 @@ Eventuellt beskriv scenarier kortfattat.
 * ageRestriction feature:
   Test scenarierna kollar ifall alternativet att boka biljett för barn på åldersbegränsade filmer finns eller ej.
 
+* availablePlats (US_3): I det här scenariot testas förekomsten av tillgängliga platser så att personen kan välja den plats av intresse
+
+* seatsBooking  (US_6): I scenariot ser man att reserverade platser inte kan väljas, vilket eliminerar möjligheten för mer än en person som köper biljetten med samma platsnummer
+
+* livePlats   (US_14): Här testas tittarens möjlighet att direkt se det totala antalet ledig platser.
+
  ### Vad visar testerna på - finns det buggar/fel i produkten? 
  De flesta scenarier går igenom utan fel, dock visar följande scenarier på buggar/fel i produkten
 
@@ -51,3 +57,5 @@ Movie trailer feature:
 newAccount feature:
   * newAccount feature var ganska svår att implementera då tidigare inputs i fälten sparas och kommer med på senare tester.
   Därför skulle vi gärna velat lägga till fler tester som testar input fälten när man skapar konto samt loggar in
+
+  * 
