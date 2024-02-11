@@ -40,5 +40,6 @@ Then('the visitor shares the URL with a friend', () => {
 });
 
 Then('the friend should be able to access the same Movie by visiting the shared URL', () => {
-    cy.visit(sharedUrl);
+  cy.visit(sharedUrl);
+  cy.wait(5000);
 });
