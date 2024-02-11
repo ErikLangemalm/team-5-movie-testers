@@ -9,7 +9,7 @@ Given('the user is on the websites start page', () => {
 Given('the user selects movie and show time and then clicks {string}', (a, b) => {
   // TODO: implement step
   cy.get(':nth-child(1) > .pMovieTitle').should('be.visible').click()
-  cy.get(':nth-child(2) > .custom-radio-button').click()
+  cy.get(':nth-child(3) > .custom-radio-button').click()
   cy.get('.screening-list > .confirm-button').click()
   
 });
@@ -94,7 +94,7 @@ Then('the user clicks the button {string} and returns to the home page', (a) => 
 Then('the user selects {string} and show time then clicks {string}', (a, b) => {
   // TODO: implement step
   cy.get(':nth-child(1) > .pMovieTitle').should('be.visible').click()
-  cy.get(':nth-child(2) > .custom-radio-button').click()
+  cy.get(':nth-child(3) > .custom-radio-button').click()
   cy.get('.screening-list > .confirm-button').click()
 });
 
@@ -118,8 +118,11 @@ Then('the user clicks on the button', () => {
   cy.wait(4000)
 });
 
-Then('the user stays in the same tab' , () => {
+Then('I should get an alert message that I need to choose an available seat {string}', (alertText) => {
   // TODO: implement step
-   
-  cy.get('body').screenshot()
+  const stub = cy.stub()
+  cy.on('window:alert', stub)
+  cy.get('.flex-space-between button').contains('Gå vidare').click().then(() => {
+    expect(stub.getCall(0)).to.be.calledWith(alertText)
+  })
 });

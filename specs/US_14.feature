@@ -1,5 +1,5 @@
 Feature: See reserved seats live 
-  As a visitor, I want to be able to see reserved seats live after clicking planned day's movie
+  As a visitor, I want to be able to see unreserved seats live after clicking planned day's movie
 
   Background:
     Given the user is on the websites main page
@@ -11,7 +11,7 @@ Feature: See reserved seats live
     When the user selects the date and time and the language of the movie
     Then the user clicks to "Gå vidare" segment
     And  the user selects the "biljettyp" and "antal" clicks on the button "Gå vidare"
-    Then the user can see that how many reserved seats live in the screen
+    Then the user can directly see how many total available seats there are
 
 
   Scenario: Navigate Back to Home Page

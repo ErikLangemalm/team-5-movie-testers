@@ -26,5 +26,5 @@ Feature: Prevent booking already reserved seats
     And  the user selects the "1 vuxen" and clicks on the button "Gå vidare" in the seat box
     And  the user clicks on the reserved seat
     And  the user clicks on the button
-    And  the user stays in the same tab
+    Then I should get an alert message that I need to choose an available seat "Välj säten innan du fortsätter"
 

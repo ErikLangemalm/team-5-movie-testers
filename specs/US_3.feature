@@ -15,4 +15,5 @@ And  the user verify that "Ledig plats" are clickable
 
 Scenario: the user selects a "Sample Movie" and showtime, but all seats are occupied
 Then the user selects the "biljettyp" and "antal" and clicks on the "Gå vidare"
+And the user clicks on the "Gå vidare" button and all seats are occupied.
 And  the user should get an alert message "Välj säten innan du fortsätter"
