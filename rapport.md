@@ -11,7 +11,9 @@ Booking and booking history: Inloggad användare kan se sina bokningar och bokni
 * newAccount feature:
   Scenario testar att skapa ett nytt konto, försöka skapa ett konto som redan existerar samt ifall epost adressen följer rätt format.
 * SeatBooking:
-  * Scenariot
+  Test scenarierna testar funktionaliteten kring biljett bokning både att det går att boka ett säta samt att inte kunna boka fler platser än vad som finns i salongen
+* ageRestriction feature:
+  Test scenarierna kollar ifall alternativet att boka biljett för barn på åldersbegränsade filmer finns eller ej.
 
  ### Vad visar testerna på - finns det buggar/fel i produkten? 
  De flesta scenarier går igenom utan fel, dock visar följande scenarier på buggar/fel i produkten
