@@ -73,5 +73,3 @@ Avbokning feature:
 newAccount feature:
   * newAccount feature var ganska svår att implementera då tidigare inputs i fälten sparas och kommer med på senare tester.
   Därför skulle vi gärna velat lägga till fler tester som testar input fälten när man skapar konto samt loggar in
-
-  * 
