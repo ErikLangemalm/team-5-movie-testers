@@ -1,7 +1,8 @@
 Feature: Filter of movies to know what movies are a available at a particuler time
 
   Background:
-    Given user is on the person is on the first page 
+    Given user is on the person is on the first page
+    And it isn't crashing or displaying error syntax
 
   Scenario Outline: Available movies:
     Then there is an available movie on the selected date

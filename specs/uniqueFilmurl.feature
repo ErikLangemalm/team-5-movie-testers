@@ -4,7 +4,7 @@ Feature: Unique URL for all Movies
   I want all Movie to have unique URL,
   So that I can bookmark them, share links with friends, etc.
 
-  Scenario: System owner ensures unique URL for views
+  Scenario: System owner ensures unique URL for all movie views
     Given the system owner navigates to the home page
     Then clicks on a movie
     Then the system owner checks that each movie has a unique URL
