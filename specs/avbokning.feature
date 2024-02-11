@@ -1,7 +1,6 @@
 Feature: Cancellation already booked seats
 
   Background:
-    Given that the website is up and running
     And it isn't crashing or displaying error syntax
 
   Scenario: Cancel booking

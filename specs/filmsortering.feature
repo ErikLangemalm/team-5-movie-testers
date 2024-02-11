@@ -1,7 +1,6 @@
 Feature: Filter of movies to know what movies are a available at a particuler time
 
   Background:
-    Given that the website is up and running
     And it isn't crashing or displaying error syntax
 
   Scenario Outline: Available movies:
