@@ -95,7 +95,6 @@ When('I input a random string as an email and password.', () => {
   cy.get('.form-control.with-icon').eq(1).click({ force: true });
   cy.get('.form-control.with-icon').eq(1).type(password);
   cy.get('#login-btn').click({ force: true });
-
 });
 
 /* No duplicate steps, this one already above

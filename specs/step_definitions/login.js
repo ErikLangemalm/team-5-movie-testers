@@ -1,37 +1,40 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
-Given('that I am on the first page', () => {
+beforeEach(() => {
   cy.visit('/');
   cy.viewport(1000, 1200);
+  cy.wait(3000)
 });
 
-Given('that the user is new and wants to be a member', () => {
-  cy.get('div.basic-nav-dropdown').first().click({ force: true });
-  // TODO: implement step
+Given('that the website is up and running', () => {
 });
 
-When('user has now registered with a valid gmail and meets the password criteria', () => {
-  let email = "klopp@gmail.com";
-  let password = "yourPassword";
-  cy.get('.form-control.with-icon').click().type(email);
-  cy.get('.form-control.with-icon').click().type(password);
-  // TODO: implement further steps for registration
+When('the user clicks on the profile icon', () => {
+  cy.get('.bi-person-circle').should('be.visible').click();
 });
 
-When('user registers, user should get confirmation message', () => {
-  // TODO: add assertions for confirmation message
+Then('clicks on the "Logga in" button', () => {
+  cy.contains('Logga in').should('be.visible').click();
 });
 
-Then('user should be able to use registered gmail and password and the {string} feature', (feature) => {
-  let email = "klopp@gmail.com";
-  let password = "yourPassword";
-  cy.get('.form-control.with-icon').click().type(email);
-  cy.get('.form-control.with-icon').click().type(password);
-  cy.get('.confirm-button').first().click();
-  // TODO: add assertions for the feature
+Then('enters the email "destiny123456john@gmail.com"', () => {
+  let email = "destiny123456john@gmail.com";
+  cy.get('.form-control.with-icon[type="email"]').should('be.visible').clear().type(email);
 });
 
-Then('user should be able to use the login feature with the remembered credentials', () => {
-  cy.get('.input.form-check-input').click();
-  // TODO: add assertions for successful login with remembered credentials
+Then('enters the password "pvt1234K"', () => {
+  let password = "pvt1234K";
+  cy.get('.form-control.with-icon[type="password"]').should('be.visible').clear().type(password);
 });
+
+Then('clicks the login button', () => {
+  cy.get('.login-btn.ms-2').should('be.visible').click();
+});
+
+Then('the user should be logged in', () => {
+});
+
+
+
+
+

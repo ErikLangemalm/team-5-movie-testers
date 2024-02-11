@@ -1,34 +1,31 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
-Given('that the website is up and running', () => {
+Given('user is in the filmvisare site', () => {
+  cy.log('Visiting the site');
   cy.visit('/');
   cy.viewport(1000, 1200);
 });
 
-Given('that the user has already pre booked a seat', () => {
-  cy.get('div.custom-radio-button').first().click({ force: true });
-  cy.get('input.screening-input').invoke('css', 'display', 'block').should('be.visible');
-  cy.get('.confirm-button').first().click()
-  cy.get('div.counter-container > button').eq(1).click();
-  cy.get('div > .confirm-button').first().click({ force: true });
+
+Then('clicks button that says "Logga in"', () => {
+  cy.get('.bi-person-circle').should('be.visible').click();
+  cy.contains('Logga in').should('be.visible').click();
 });
 
-Given('has earlier received a confirmation email', () => {
-  // TODO: implement step
+Given('the user has already pre booked a seat', () => {
+  cy.visit('/prebooked-seat');
+  cy.get('.seat-selector').first().click();
+  cy.get('#confirm-booking').click();
 });
 
 When('User logs into the website using gmail and password', () => {
-  let email = "klopp@gmail.com";
-  let password = "yourPassword";
-  cy.get('.form-control.with-icon').click().type(email);
-  cy.get('.form-control.with-icon').click().type(password);
+  let email = "destiny123456john@gmail.com";
+  cy.get('.form-control.with-icon[type="email"]').should('be.visible').clear().type(email);
+  let password = "pvt1234K";
+  cy.get('.form-control.with-icon[type="password"]').should('be.visible').clear().type(password);
+  cy.get('.login-btn.ms-2').should('be.visible').click();
 });
 
-When('user proceeds to go into bookings', () => {
-  cy.get('div.mb-4 table-dark > button').eq(1).click();
-  cy.get('div > .cancel-booking-btn').first().click({ force: true });
+Then('user proceeds to go into bookings', () => {
 });
 
-Then('user should see previosly booked dates and should be given the option too onbook a specific movie', () => {
-  // TODO: implement step
-});
