@@ -1,34 +1,45 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
-Given('That I am scrolling for movies', () => {
-  // TODO: implement step
+let sharedUrl;
+
+Given('the system owner navigates to the home page', () => {
+  cy.visit('/');
+  cy.viewport(1000, 1200);
+  cy.wait(3000);
 });
 
-When('I Click on a movie title', () => {
-  // TODO: implement step
+Then('clicks on a movie', () => {
+  cy.get('.pMovieTitle').contains('Interstellar').click();
+  cy.wait(3000);
 });
 
-Then('I should be directed from the movie selection to the more detailed movie view', () => {
-  // TODO: implement step
+Then('the system owner checks that each movie has a unique URL', () => {
+    cy.url().then(firstUrl => {
+    cy.go('back');
+    cy.get('.pMovieTitle').contains('Gladiator').click();
+    cy.url().should('not.equal', firstUrl).then(secondUrl => {
+    expect(firstUrl).not.equal(secondUrl);
+    });
+});
 });
 
-/* No duplicate steps, this one already in bookingConfirmation.js
-Then('I should then be able to see the following information:', () => {});*/
-
-When('I Check the URL, it should contain Movie Title, for example {string}', (a) => {
-  // TODO: implement step
+Given('the visitor navigates to a specific Movie', () => {
+    cy.visit('/');
+    cy.viewport(1000, 1200);
+    cy.wait(3000);
+    cy.get('.pMovieTitle').contains('Star Wars: Episode...').click();
+    cy.wait(3000);
 });
 
-Given('That I am in the detailed movie view', () => {
-  // TODO: implement step
+Then('the visitor shares the URL with a friend', () => {
+    cy.url().then(url => {
+        sharedUrl = url;
+        cy.log('Movie URL:', sharedUrl);
+        cy.wait(3000);
+      });
 });
 
-/* No duplicate steps, this one already above
-When('I Check the URL, it should contain Movie Title, for example {string}', (a) => {});*/
-
-Then('I check if the <movie-title> in the URL Matches with the one of the <movie-title>', () => {
-  // TODO: implement step
+Then('the friend should be able to access the same Movie by visiting the shared URL', () => {
+  cy.visit(sharedUrl);
+  cy.wait(5000);
 });
-
-/* No duplicate steps, this one already in bookingConfirmation.js
-Then('I should then be able to see the following information:', () => {});*/

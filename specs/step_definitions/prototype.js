@@ -1,31 +1,32 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
-Given('I am scrolling for movies as the system manager', () => {
-  // TODO: implement step
+Given('the system displays the prototype', () => {
+  cy.visit('/');
+  cy.viewport(1000, 1200);
+  cy.wait(3000);
 });
 
-When('I choose to view the prototype in the system', () => {
-  // TODO: implement step
+Then('I should see at least 5 movies listed', () => {
+  cy.get('.d-flex.justify-content-center.row')
+    .find('.movieCard.card.col-lg-3.col-md-4.col-sm-6.col-6')
+    .should('have.length.at.least', 5);
+    cy.wait(1000);
+
 });
 
-Then('I should see a display with 5 movies across 30 viewing dates', () => {
-  // TODO: implement step
+Given('the system displays the prototype again', () => {
+  cy.visit('/');
+  cy.viewport(1000, 1200);
+  cy.wait(3000);
 });
 
-Then('I should then be able to see the following information, Movie name and Viewing Dates', () => {
-  // TODO: implement step
+When('I view the details of a movie', () => {
+  cy.contains('.pMovieTitle', 'The Usual Suspects').click();
+  cy.wait(1000);
 });
 
-/* No duplicate steps, this one already above
-Given('I am scrolling for movies as the system manager', () => {});*/
-
-/* No duplicate steps, this one already above
-When('I choose to view the prototype in the system', () => {});*/
-
-Then('I should see a display with 5 movies across 30 viewing dates including more detailed information', () => {
-  // TODO: implement step
-});
-
-Then('I should then be able to see the following information: Movie name and Viewing Dates for available movies', () => {
-  // TODO: implement step
+Then('the system should be able to show 30 viewing dates accross 2 movie halls', () => {
+  cy.get('.accordion-body .choose-screening')
+    .should('have.length.at.least', 30);
+  cy.wait(1000);
 });
