@@ -3,12 +3,12 @@ Vi testar följande features:
 Ticket booking: Användaren kan boka biljetter med olika pris.
 Movie trailers/Movie details: Användaren kan se trailers av filmer samt kortfattning av film. 
 Booking and booking history: Inloggad användare kan se sina bokningar och bokningshistorik.
-* Berätta om feature B
 * Berätta om feature A
   * Eventuellt beskriv scenarier kortfattat.
 * Inloggning samt bli medlem.
   * Eventuellt beskriv scenarier kortfattat.
-  * Scenarier relaterade till inloggningen omfattar skapa nytt konto samt testnning av inmatningsfälten för nya medlemmar.
+  * Scenarier relaterade till inloggningen omfattar skapa nytt konto samt testning av inmatningsfälten för nya medlemmar.
+* Berätta om feature B
 * Berätta om feature C
   * Eventuellt beskriv scenarier kortfattat.
 
@@ -23,13 +23,15 @@ Ticket booking feature/aktiva bookningar:
  * Scenariobeskrivning... samt vilken fel bugg
  * scenariot angående ålders restriktioner på vissa filmer visar klart och tydligt att implementationen för att förhindra barn att se olämpliga filmer inte är där.
  Testet visar på att alternativet för barn fortfarande är där på filmer med åldersgräns. Manuell testning visar också att bokningen går att genomföra med barn upp till 12 samt enbart barn upp till 12 år kan boka och reservera platser för filmer som inte är lämpliga för barn.
-* Eventuellt beskriv scenarier kortfattat.
+ * 
+
 
 ### Saker vi inte hunnit testa
 Movie trailer feature:
-*Det var lite knepig för att hitta några elementer i iframe tex kunnde inte hitta "watch trailer on youtubue" elementen.
-*Inte hunnit att testa negativa scenarier
+  * Det var lite knepig för att hitta några elementer i iframe tex kunnde inte hitta "watch trailer on youtubue" elementen.
+  * Inte hunnit att testa negativa scenarier
 
   * Vi hade velat lägga till följande scenario... därför att.
-* Under feature B:
-  * Vi hade velat lägga till följande scenario... därför att.
+newAccount feature:
+  * newAccount feature var ganska svår att implementera då tidigare inputs i fälten sparas och kommer med på senare tester.
+  Därför skulle vi gärna velat lägga till fler tester som testar input fälten när man skapar konto samt loggar in
