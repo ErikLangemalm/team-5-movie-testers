@@ -8,9 +8,10 @@ Booking and booking history: Inloggad användare kan se sina bokningar och bokni
 * Inloggning samt bli medlem.
   * Eventuellt beskriv scenarier kortfattat.
   * Scenarier relaterade till inloggningen omfattar skapa nytt konto samt testning av inmatningsfälten för nya medlemmar.
-* Berätta om feature B
-* Berätta om feature C
-  * Eventuellt beskriv scenarier kortfattat.
+* newAccount feature:
+  Scenario testar att skapa ett nytt konto, försöka skapa ett konto som redan existerar samt ifall epost adressen följer rätt format.
+* SeatBooking:
+  * Scenariot
 
  ### Vad visar testerna på - finns det buggar/fel i produkten? 
  De flesta scenarier går igenom utan fel, dock visar följande scenarier på buggar/fel i produkten
