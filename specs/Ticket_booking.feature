@@ -7,32 +7,39 @@ Feature: Ticket Booking
   - Child: 80 SEK
 
   Background:
-    Given I am a visitor on the ticket booking page
+    Given I am on the home page
 
-  Scenario: Book Ticket for "<ticketType>"
-    When I select "<ticketType>" as the ticket type
-    And I proceed with the booking process
-    Then I the price should be "<price>"
-    And my booking should be confirmed
+  Scenario: Book Ticket for ticket type "<ticketType>" from movie detail page
+    And I click on the movie titled "Gladiator"
+    And I choose my desired show time and proceed
+    And I select "<ticketType>" as the ticket type with quantity of "<quantity>"
+    And I can see total price "<totalPrice>"
+    And I click the confirm button
+    And I reserve a seat
+    And I enter my email at confirmation stage and proceed
+    Then I should see confirmation booking alert box
+    Then I should see confirmation screen
+    And I can see my booking details
+    #This test will run for 4 times depending on ticket type, i skipped the last 3, since
+    #we have limited bookings, currently I am not able to see current booking in my bookings (BUG)
     Examples:
-      | ticketType | price   | 
-      | Adult      | 140 SEK | 
-      | Senior     | 120 SEK |
-      | Child      | 80 SEK  |
+      | ticketType | quantity | totalPrice |
+      | Adult      | 1        | 140 kr     |
+  #| Senior     |   1            | 120 kr    |
+  #| Child      |   1            | 80 kr     |
+  #| Adult      |  2             | 280 kr |
 
   Scenario: Book Tickets for Two Adults and One Child
-    When I select "Adult" as the ticket type
-    And I enter a quantity of 2
-    And I select "Child" as the ticket type
-    And I enter a quantity of 1
-    And I proceed with the booking process
-    Then I should see the total cost of (2 * 140 SEK + 1 * 80 SEK)
-    And my booking should be confirmed
-    #if i choose multiple ticket types in one booking it should show me the total cost 
+    And I click on the movie titled "Gladiator"
+    And I choose my desired show time and proceed
+    When I select "Adult" as the ticket type with quantity of "2"
+    And I select "Child" as the ticket type with quantity of "1"
+    Then I can see total price "360"
 
-
-  #Scenario: Choose Film Type and Time before Ticket Booking
-   # When I do not select the film type 
-    #And I do not select the screening time 
-    #And I click on the "Continue" button
-    #Then It should not be redirected to the ticket booking page
+  Scenario: Book Tickets for Two Adults and One Child
+    And I click on the movie titled "Gladiator"
+    And I choose my desired show time and proceed
+    When I select "Adult" as the ticket type with quantity of "1"
+    And I select "Senior" as the ticket type with quantity of "1"
+    And I select "Child" as the ticket type with quantity of "1"
+    Then I can see total price "340"

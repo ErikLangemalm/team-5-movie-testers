@@ -1,46 +1,63 @@
-import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, Then, And } from "@badeball/cypress-cucumber-preprocessor";
 
-Given('I am a visitor on the ticket booking page', () => {
+When('I click {string} button', (buttonName) => {
+  cy.contains('button', buttonName).click({ force: true })
+});
+
+And('I click the confirm button', () => {
+  cy.wait(3000)
+  cy.get('.price-component > .confirm-button').click({ force: true })
+});
+
+Then('I enter my email at confirmation stage and proceed', () => {
+  cy.get("[type='email']").type('anam-rehman@live.com', { force: true })
+  cy.get('#booking-btn').click({ force: true })
+  cy.wait(3000)
+
+});
+
+Then('I should see confirmation booking alert box', () => {
+  cy.get('.modal-content')
+    .should('be.visible')
+    .contains('button', 'Boka')
+    .click()
+  cy.wait(3000)
+});
+
+Then('I should see confirmation screen', () => {
+  cy.url().should('include', '/bokningsbekraftelse');
+  cy.wait(3000)
+
+});
+
+When('I choose my desired show time and proceed', () => {
+  cy.get(':nth-child(3) > .custom-radio-button').click({ force: true })
+  cy.contains('button', 'Gå vidare').click({ force: true })
+  cy.wait(3000)
+});
+
+Then('I can see my booking details', () => {
   // TODO: implement step
 });
 
-When('I select {string} as the ticket type', (ticketType) => {
-  // TODO: implement step
+Then('I can see total price {string}', (totalPrice) => {
+  cy.get('.total-price').eq(0).should('contain.text', 'Total: ' + totalPrice)
+  cy.wait(3000)
 });
 
-When('I proceed with the booking process', () => {
-  // TODO: implement step
+When('I select {string} as the ticket type with quantity of {string}', (ticketType, qty) => {
+  let categorySelector;
+
+  if (ticketType === "Adult") {
+    categorySelector = 'div.ticket-category:nth-of-type(1)';
+  } else if (ticketType === "Child") {
+    categorySelector = 'div.ticket-category:nth-of-type(3)';
+  } else {
+    categorySelector = 'div.ticket-category:nth-of-type(2)';
+  }
+
+  for (let i = 1; i <= parseInt(qty); i++) {
+    cy.get(`${categorySelector} button:nth-of-type(2)`).click({ force: true });
+  }
+  cy.wait(3000)
 });
-
-Then('I the price should be {string}', (price) => {
-  // TODO: implement step
-});
-
-Then('my booking should be confirmed', () => {
-  // TODO: implement step
-});
-
-When('I select {string} as the ticket type', (a) => {
-  // TODO: implement step
-});
-
-When('I enter a quantity of 2', () => {
-  // TODO: implement step
-});
-
-/* No duplicate steps, this one already above
-When('I select {string} as the ticket type', (a) => {});*/
-
-When('I enter a quantity of 1', () => {
-  // TODO: implement step
-});
-
-/* No duplicate steps, this one already above
-When('I proceed with the booking process', () => {});*/
-
-Then('I should see the total cost of (2 * 140 SEK + 1 * 80 SEK)', () => {
-  // TODO: implement step
-});
-
-/* No duplicate steps, this one already above
-Then('my booking should be confirmed', () => {});*/
